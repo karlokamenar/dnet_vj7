@@ -1,0 +1,11 @@
+﻿CREATE TABLE drzave (
+id INT IDENTITY PRIMARY KEY,
+naziv NVARCHAR(30) NOT NULL )
+
+CREATE TABLE gradovi(
+id INT IDENTITY PRIMARY KEY,
+naziv NVARCHAR(30) NOT NULL,
+broj_stanovnika FLOAT NOT NULL,
+drzava_id INT,
+CONSTRAINT fk_drzava FOREIGN KEY(drzava_id) REFERENCES drzave(id))
+
